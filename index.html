@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BN Racing Station · จองเครื่องเกม</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05060d;--card:#0c1020;--line:#1c2547;--tx:#eaf0ff;--mut:#7e8ab8;--cy:#00e5ff;--pk:#ff2a6d;--gr:#2dffb3;--am:#ffb800;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--f:"Orbitron","Kanit",system-ui,sans-serif;--k:"Kanit",system-ui,-apple-system,"Noto Sans Thai",sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;color:var(--tx);font-family:var(--k);min-height:100vh;background:
+linear-gradient(135deg,#ffffff05 25%,transparent 25% 50%,#ffffff05 50% 75%,transparent 75%) 0 0/6px 6px,
+radial-gradient(ellipse at 85% -10%,#00e5ff22,transparent 50%),radial-gradient(ellipse at 0 105%,#ff2a6d26,transparent 45%),var(--bg);background-attachment:fixed}
+.w{max-width:640px;margin:auto;padding:14px 14px 40px}
+.stripe{height:5px;margin:-14px -14px 14px;background:repeating-linear-gradient(115deg,var(--pk) 0 18px,var(--cy) 18px 36px,transparent 36px 44px);background-size:88px 100%;animation:sl 3s linear infinite}
+@keyframes sl{to{background-position:88px 0}}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+h1{margin:0;font:900 26px/1 var(--f);font-style:italic;letter-spacing:1px;transform:skewX(-8deg)}
+h1 em{font-style:inherit;color:var(--cy);text-shadow:0 0 18px var(--cy)}
+.sub{color:var(--mut);font-size:12px;margin-top:5px}
+#clk{font:700 19px var(--f);color:var(--cy);text-shadow:0 0 12px var(--cy);text-align:right}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.m{background:linear-gradient(160deg,#121936,var(--card));border-left:4px solid var(--line);padding:11px 12px 12px;position:relative;clip-path:polygon(0 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%)}
+.m .hd{display:flex;justify-content:space-between;align-items:center;font:700 12px var(--f);color:var(--mut)}
+.m .st{font-weight:600;font-size:13px}
+.m .nm{font-size:15px;font-weight:600;margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:22px}
+.m .tm{font:900 27px/1.1 var(--f);margin-top:2px;min-height:30px;letter-spacing:1px}
+.m .end{font-size:13px;color:var(--tx);margin-top:6px}.m .end b{font:700 15px var(--f);color:var(--cy)}
+.gauge{height:16px;margin:8px 0 4px;background:#1a2244;position:relative;overflow:hidden;transform:skewX(-14deg)}
+.gauge i{display:block;height:100%;background:linear-gradient(90deg,var(--gr),var(--cy));box-shadow:0 0 14px var(--cy);transition:width 1s linear}
+.gauge:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 9px,var(--card) 9px 11px)}
+.rg{display:flex;justify-content:space-between;font-size:11px;color:var(--mut)}
+.m.free{border-left-color:var(--gr)}.m.free .st{color:var(--gr)}
+.m.free .tm{font-size:19px;color:var(--mut)}
+.m.play{border-left-color:var(--cy)}.m.play .st{color:var(--cy)}
+.m.warn{border-left-color:var(--am)}.m.warn .st,.m.warn .tm{color:var(--am)}.m.warn .gauge i{background:var(--am);box-shadow:0 0 14px var(--am)}
+.m.crit{border-left-color:var(--pk);animation:bl 1s steps(2) infinite}.m.crit .st,.m.crit .tm{color:var(--pk)}.m.crit .gauge i{background:var(--pk);box-shadow:0 0 14px var(--pk)}
+@keyframes bl{50%{background:#2a0f20}}
+.owe{color:var(--pk);font-weight:600;font-size:12px;margin-top:4px}.nt{font-size:12px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.date{display:flex;align-items:center;justify-content:space-between;margin:6px 0 10px}
+.date button{background:var(--card);border:1px solid var(--line);color:var(--cy);width:44px;height:40px;font-size:20px;transform:skewX(-10deg)}
+.date span{font-weight:600}
+.tl{display:grid;grid-template-columns:44px repeat(4,1fr);gap:3px}
+.h{font:700 11px var(--f);text-align:center;color:var(--cy);padding:6px 0;border-bottom:2px solid var(--cy)}
+.ax{position:relative}.ax span{position:absolute;right:4px;font:11px var(--f);color:var(--mut);transform:translateY(-50%)}
+.col{position:relative;background-color:#0a0e1d;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.col.adm{cursor:copy}
+.blk{position:absolute;left:2px;right:2px;padding:3px 4px;overflow:hidden;font-size:11px;line-height:1.25;background:linear-gradient(160deg,#5a1fd0,#c2186f);border-left:3px solid var(--cy);color:#fff;z-index:2}
+.blk b{display:block;font-weight:600;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.blk small{opacity:.85;font-size:10px}
+.pst{position:absolute;left:0;right:0;top:0;background:#000a;z-index:1;pointer-events:none}
+.nl{position:absolute;left:-44px;right:0;height:2px;background:var(--cy);box-shadow:0 0 8px var(--cy);z-index:3;pointer-events:none}
+.lg{display:flex;gap:14px;font-size:11px;color:var(--mut);margin:12px 0}
+.lg i{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:-1px}
+#ov{position:fixed;inset:0;background:#000b;display:none;align-items:flex-end;justify-content:center;z-index:9;backdrop-filter:blur(3px)}
+#ov.on{display:flex}
+.sh{background:var(--card);border-top:3px solid var(--cy);width:100%;max-width:640px;max-height:92vh;overflow:auto;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));box-shadow:0 0 40px #00e5ff44}
+.sh h3{margin:0 0 4px;font:700 17px var(--f)}
+label{display:block;font-size:12px;color:var(--mut);margin:12px 0 4px}
+input,textarea{font-family:inherit;width:100%;padding:12px;border:1px solid var(--line);background:var(--bg);color:var(--tx);font-size:16px;border-radius:0}
+input:focus,textarea:focus,button:focus-visible{outline:2px solid var(--cy);outline-offset:1px}
+input[type=time]{font:700 20px var(--f);color-scheme:dark}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chips button{flex:1;padding:9px 6px;background:transparent;border:1px solid var(--cy);color:var(--cy);font:600 13px var(--k)}
+.chips button.n{border-color:var(--gr);color:var(--gr)}
+#er{color:var(--pk);font-size:13px;min-height:18px;margin-top:8px}
+.r{display:flex;gap:8px;margin-top:12px}
+.btn{flex:1;padding:13px;border:0;font:700 16px var(--k);color:#021018;background:linear-gradient(90deg,var(--cy),var(--gr));clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.btn.g{background:#1a2244;color:var(--tx)}.btn.d{background:var(--pk);color:#fff}
+#gate{position:fixed;inset:0;z-index:20;background:var(--bg) linear-gradient(135deg,#ffffff05 25%,transparent 25% 50%,#ffffff05 50% 75%,transparent 75%) 0 0/6px 6px;display:flex;align-items:center;justify-content:center;padding:20px}
+.gb{width:100%;max-width:340px;display:flex;flex-direction:column;gap:12px;text-align:center}.gb h1{font-size:44px}#pe{color:var(--pk);font-size:13px;min-height:16px}
+</style>
+</head>
+<body>
+<div class="w">
+  <div class="stripe"></div>
+  <div class="top"><div><h1>BN<em>RS</em></h1><div class="sub">BN Racing Station · เปิดจอง 13:00 – 00:00</div></div><div id="clk">--:--:--</div></div>
+  <div class="cards" id="cards"></div>
+  <div class="date"><button id="pv">‹</button><span id="dl"></span><button id="nx">›</button></div>
+  <div class="tl" id="g"></div>
+  <div class="lg"><span><i style="background:#0a0e1d;border:1px solid var(--line)"></i>ว่าง</span><span><i style="background:var(--pk)"></i>จองแล้ว</span><span><i style="background:var(--cy)"></i>เวลาตอนนี้</span></div>
+  <div class="sub" id="net" style="margin-bottom:6px"></div><div class="sub" id="hint"></div><div style="margin-top:14px"><button class="btn g" id="sw" style="flex:none;padding:8px 14px;font-size:13px;clip-path:none">สลับผู้ใช้</button></div>
+</div>
+<div id="gate"><div class="gb"><h1>BN<em>RS</em></h1><div class="sub">BN Racing Station</div><p style="margin:14px 0 4px">คุณคือใคร?</p><button class="btn" id="bc">ลูกค้า</button><button class="btn g" id="bs">พนักงาน</button><div id="pw" style="display:none;flex-direction:column;gap:10px"><input id="pc" type="password" placeholder="รหัสพนักงาน"><div id="pe"></div><button class="btn" id="po">เข้าสู่ระบบ</button></div></div></div>
+<div id="ov"><div class="sh" id="sh"></div></div>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+var FB={apiKey:"AIzaSyCYUtQqsSeRKpclLmtjYzwIbdn65H5bqSw",authDomain:"peak-7b183.firebaseapp.com",projectId:"peak-7b183",appId:"1:763901338697:web:d7ed18342323d6e5208b98"};
+var START=780,END=1440,PX=1.3,D=new Date(),day=ymd(D),B=[],ADMIN=false;
+firebase.initializeApp(FB);var fs=firebase.firestore();try{fs.settings({experimentalAutoDetectLongPolling:true})}catch(e){}var ref=fs.doc("bnrs/state"),net=document.getElementById("net");
+ref.onSnapshot(function(x){try{B=x.exists?JSON.parse(x.data().b):[]}catch(e){B=[]}B.forEach(nz);net.textContent="🟢 ออนไลน์ · อัปเดตล่าสุด "+new Date().toTimeString().slice(0,8);grid();cards()},function(e){net.textContent="🔴 เชื่อมต่อไม่ได้: "+(e.code||e.message)});
+function save(){ref.set({b:JSON.stringify(B)}).catch(function(e){alert("บันทึกไม่สำเร็จ: "+(e.code||e.message))})}
+function nz(b){if(b.st==null){b.st=START+b.s*30;b.en=b.st+b.n*30}return b}
+function ymd(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function hm(m){m=m%1440;return String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0")}
+function pt(v){if(!v)return null;var a=v.split(":");return +a[0]*60+ +a[1]}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function pad(n){return String(n).padStart(2,"0")}
+function nowSec(){var x=new Date();return x.getHours()*3600+x.getMinutes()*60+x.getSeconds()}
+function clash(m,d,s,e,id){return B.find(function(b){return b.d===d&&b.m===m&&b.id!==id&&b.st<e&&b.en>s})}
+function cards(){
+  var t=nowSec(),td=ymd(new Date()),h="";
+  for(var m=0;m<4;m++){
+    var cur=B.find(function(b){return b.d===td&&b.m===m&&t>=b.st*60&&t<b.en*60});
+    if(cur){
+      var left=cur.en*60-t,tot=(cur.en-cur.st)*60,
+      s=pad(Math.floor(left/3600))+":"+pad(Math.floor(left%3600/60))+":"+pad(left%60),
+      cl=left<=120?" crit":left<=600?" warn":"";
+      h+='<div class="m play'+cl+'" data-id="'+cur.id+'"><div class="hd"><span>เครื่อง '+(m+1)+'</span><span class="st">กำลังเล่น</span></div><div class="nm">'+esc(cur.name)+'</div><div class="tm">'+s+'</div><div class="end">หมดเวลา <b>'+hm(cur.en)+'</b> น.</div><div class="gauge"><i style="width:'+(left/tot*100)+'%"></i></div><div class="rg"><span>เริ่ม '+hm(cur.st)+'</span><span>เหลือ '+Math.ceil(left/60)+' นาที</span></div>'+(ADMIN&&cur.owe>0?'<div class="owe">ค้างชำระ ฿'+cur.owe+'</div>':'')+(ADMIN&&cur.note?'<div class="nt">📝 '+esc(cur.note)+'</div>':'')+'</div>';
+    }else{
+      var nx=null;B.forEach(function(b){if(b.d===td&&b.m===m&&b.st*60>t&&(!nx||b.st<nx.st))nx=b});
+      h+='<div class="m free"><div class="hd"><span>เครื่อง '+(m+1)+'</span><span class="st">ว่าง</span></div><div class="nm">พร้อมให้เล่น</div><div class="tm">'+(nx?'ว่างถึง '+hm(nx.st):'ว่างทั้งคืน')+'</div><div class="gauge"><i style="width:0"></i></div><div class="rg"><span>'+(nx?'คิวถัดไป '+esc(nx.name):'ยังไม่มีคิว')+'</span></div></div>';
+    }
+  }
+  document.getElementById("cards").innerHTML=h;
+  document.getElementById("clk").textContent=new Date().toTimeString().slice(0,8);
+}
+function grid(){
+  var today=day===ymd(new Date()),n=new Date(),nm=n.getHours()*60+n.getMinutes(),H=(END-START)*PX,h='<div></div>';
+  for(var m=1;m<=4;m++)h+='<div class="h">เครื่อง '+m+'</div>';
+  h+='<div class="ax" style="height:'+H+'px">';
+  for(var t=START;t<=END;t+=60)h+='<span style="top:'+((t-START)*PX)+'px">'+hm(t)+'</span>';
+  h+='</div>';
+  for(var m=0;m<4;m++){
+    h+='<div class="col'+(ADMIN?" adm":"")+'" data-m="'+m+'" style="height:'+H+'px;background-image:linear-gradient(var(--line) 1px,transparent 1px);background-size:100% '+(60*PX)+'px">';
+    if(today&&nm>START)h+='<div class="pst" style="height:'+(Math.min(nm,END)-START)*PX+'px"></div>';
+    B.forEach(function(b){if(b.d!==day||b.m!==m)return;
+      h+='<div class="blk" data-id="'+b.id+'" style="top:'+(b.st-START)*PX+'px;height:'+(b.en-b.st)*PX+'px"><b>'+esc(b.name)+(ADMIN&&b.owe>0?" ฿":"")+'</b><small>'+hm(b.st)+'–'+hm(b.en)+'</small></div>'});
+    if(today&&nm>=START&&nm<END&&m===3)h+='<div class="nl" style="top:'+(nm-START)*PX+'px"></div>';
+    h+='</div>';
+  }
+  document.getElementById("g").innerHTML=h;
+  document.getElementById("dl").textContent=new Date(day+"T00:00:00").toLocaleDateString("th-TH",{weekday:"short",day:"numeric",month:"short",year:"numeric"})+(today?" · วันนี้":"");
+}
+function close(){document.getElementById("ov").classList.remove("on")}
+function open(h){document.getElementById("sh").innerHTML=h;document.getElementById("ov").classList.add("on")}
+function form(b,m,st){
+  var ed=!!b,en=ed?b.en:Math.min(st+60,END);if(ed)st=b.st;
+  open('<h3>'+(ed?"แก้ไขการจอง":"จองเครื่อง")+' '+(m+1)+'</h3><div class="sub">'+esc(document.getElementById("dl").textContent)+'</div>'+
+  '<label>ชื่อลูกค้า</label><input id="nm" maxlength="24" placeholder="พิมพ์ชื่อ" value="'+(ed?esc(b.name):"")+'">'+
+  '<div class="two"><div><label>เวลาเริ่ม</label><input id="ts" type="time" value="'+hm(st)+'"></div><div><label>เวลาจบ (หมดเวลา)</label><input id="te" type="time" value="'+hm(en)+'"></div></div>'+
+  '<div class="chips"><button class="n" data-now="1">เริ่มตอนนี้</button><button data-d="30">+30 นาที</button><button data-d="60">+1 ชม.</button><button data-d="120">+2 ชม.</button><button data-d="180">+3 ชม.</button></div><div id="er"></div>'+
+  '<label>ค้างชำระ (บาท)</label><input id="ow" type="number" inputmode="numeric" min="0" placeholder="0" value="'+(ed&&b.owe?b.owe:"")+'">'+
+  '<label>โน้ต</label><textarea id="nt" rows="2" maxlength="120" placeholder="รายละเอียดเพิ่มเติม">'+(ed?esc(b.note||""):"")+'</textarea>'+
+  '<div class="r">'+(ed?'<button class="btn d" id="dl2">ลบ</button>':'<button class="btn g" id="cx">ยกเลิก</button>')+'<button class="btn" id="ok">'+(ed?"บันทึก":"ยืนยันจอง")+'</button></div>'+(ed?'<div class="r"><button class="btn g" id="cx">ปิด</button></div>':""));
+  var $=function(i){return document.getElementById(i)};
+  $("cx").onclick=close;
+  document.querySelectorAll(".chips button").forEach(function(c){c.onclick=function(){
+    if(c.dataset.now){var x=new Date();$("ts").value=pad(x.getHours())+":"+pad(x.getMinutes())}
+    else{var s=pt($("ts").value);if(s==null)return;$("te").value=hm(Math.min(s+ +c.dataset.d,END))}}});
+  var dl=$("dl2");
+  if(dl)dl.onclick=function(){
+    if(!dl.dataset.s){dl.dataset.s=1;dl.textContent="แตะอีกครั้งเพื่อลบ";return}
+    B=B.filter(function(z){return z.id!==b.id});save();close();grid();cards()};
+  $("ok").onclick=function(){
+    var n=$("nm").value.trim(),s=pt($("ts").value),e=pt($("te").value),er=$("er");
+    if(e===0)e=END;
+    if(!n){$("nm").style.borderColor="var(--pk)";er.textContent="กรุณาใส่ชื่อลูกค้า";return}
+    if(s==null||e==null){er.textContent="กรุณาระบุเวลาเริ่มและเวลาจบ";return}
+    if(s<START||e>END){er.textContent="ร้านเปิด 13:00 – 00:00 น. เท่านั้น";return}
+    if(e<=s){er.textContent="เวลาจบต้องหลังเวลาเริ่ม";return}
+    var c=clash(m,day,s,e,ed?b.id:null);
+    if(c){er.textContent="ชนกับคิว "+c.name+" ("+hm(c.st)+"–"+hm(c.en)+")";return}
+    var v={name:n,st:s,en:e,owe:+$("ow").value||0,note:$("nt").value.trim()};
+    if(ed)Object.assign(b,v);else B.push(Object.assign({id:Date.now(),d:day,m:m},v));
+    save();close();grid();cards()};
+}
+function byId(id){return B.find(function(b){return b.id==id})}
+document.getElementById("g").onclick=function(e){
+  if(!ADMIN)return;
+  var k=e.target.closest(".blk");if(k){var b=byId(k.dataset.id);if(b)form(b,b.m);return}
+  var c=e.target.closest(".col");if(!c)return;
+  var y=e.clientY-c.getBoundingClientRect().top,s=START+Math.floor(y/PX/15)*15;
+  form(null,+c.dataset.m,Math.min(s,END-30));
+};
+document.getElementById("cards").onclick=function(e){
+  var k=e.target.closest(".m.play");if(!k||!ADMIN)return;var b=byId(k.dataset.id);if(b)form(b,b.m);
+};
+document.getElementById("ov").onclick=function(e){if(e.target.id==="ov")close()};
+document.getElementById("pv").onclick=function(){var d=new Date(day+"T00:00:00");d.setDate(d.getDate()-1);day=ymd(d);grid()};
+document.getElementById("nx").onclick=function(){var d=new Date(day+"T00:00:00");d.setDate(d.getDate()+1);day=ymd(d);grid()};
+function enter(a){ADMIN=a;document.getElementById("gate").style.display="none";
+document.getElementById("hint").textContent=a?"พนักงาน: แตะช่องว่างในตารางเพื่อจอง (กำหนดเวลาเริ่ม/จบเองได้) · แตะคิวที่จองแล้วหรือการ์ดเครื่องเพื่อแก้ไข/ลบ":"ดูเครื่องว่างได้ที่นี่ · จองกับพนักงานที่ร้าน";grid();cards()}
+document.getElementById("bc").onclick=function(){enter(false)};
+document.getElementById("bs").onclick=function(){var p=document.getElementById("pw");p.style.display="flex";document.getElementById("pc").focus()};
+document.getElementById("po").onclick=function(){if(document.getElementById("pc").value==="Bnrs8888")enter(true);else document.getElementById("pe").textContent="รหัสไม่ถูกต้อง"};
+document.getElementById("sw").onclick=function(){ADMIN=false;close();document.getElementById("pc").value="";document.getElementById("pe").textContent="";document.getElementById("pw").style.display="none";document.getElementById("gate").style.display="flex";grid();cards()};
+var lastMin=-1;
+setInterval(function(){cards();var m=new Date().getMinutes();if(m!==lastMin){lastMin=m;grid()}},1000);
+cards();grid();
+</script>
+</body>
+</html>
