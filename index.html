@@ -49,7 +49,7 @@ h1 em{font-style:inherit;color:var(--cy);text-shadow:0 0 18px var(--cy)}
 .col{position:relative;background-color:#0a0e1d;border-left:1px solid var(--line);border-right:1px solid var(--line)}
 .col.adm{cursor:copy}
 .blk{position:absolute;left:2px;right:2px;padding:3px 4px;overflow:hidden;font-size:11px;line-height:1.25;background:linear-gradient(160deg,#5a1fd0,#c2186f);border-left:3px solid var(--cy);color:#fff;z-index:2}
-.blk b{display:block;font-weight:600;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.blk small{opacity:.85;font-size:10px}
+.blk.ot{border-bottom:3px dashed var(--am)}.blk b{display:block;font-weight:600;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.blk small{opacity:.85;font-size:10px}
 .pst{position:absolute;left:0;right:0;top:0;background:#000a;z-index:1;pointer-events:none}
 .nl{position:absolute;left:-44px;right:0;height:2px;background:var(--cy);box-shadow:0 0 8px var(--cy);z-index:3;pointer-events:none}
 .lg{display:flex;gap:14px;font-size:11px;color:var(--mut);margin:12px 0}
@@ -72,6 +72,23 @@ input[type=time]{font:700 20px var(--f);color-scheme:dark}
 .btn.g{background:#1a2244;color:var(--tx)}.btn.d{background:var(--pk);color:#fff}
 #gate{position:fixed;inset:0;z-index:20;background:var(--bg) linear-gradient(135deg,#ffffff05 25%,transparent 25% 50%,#ffffff05 50% 75%,transparent 75%) 0 0/6px 6px;display:flex;align-items:center;justify-content:center;padding:20px}
 .gb{width:100%;max-width:340px;display:flex;flex-direction:column;gap:12px;text-align:center}.gb h1{font-size:44px}#pe{color:var(--pk);font-size:13px;min-height:16px}
+.tabs{display:flex;gap:4px;margin:10px 0}.tabs button{flex:1;padding:10px 4px;background:#141a36;border:0;color:var(--mut);font:600 14px var(--k)}.tabs button.on{background:var(--cy);color:#021018}
+.big{text-align:center;padding:14px 8px;background:linear-gradient(160deg,#0f2a2a,var(--card));border-left:4px solid var(--gr);margin:6px 0}.big small{display:block;color:var(--mut);font-size:13px}.big b{display:block;font:900 38px/1.25 var(--f);color:var(--gr);text-shadow:0 0 16px var(--gr)}.big span{font-size:12px;color:var(--mut)}.big.neg{border-color:var(--pk);background:linear-gradient(160deg,#2a0f20,var(--card))}.big.neg b{color:var(--pk);text-shadow:0 0 16px var(--pk)}
+details{border-bottom:1px solid var(--line)}summary{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:6px;padding:11px 2px;font-size:13px;cursor:pointer;list-style:none;align-items:center}summary::-webkit-details-marker{display:none}summary b{font:700 14px var(--f);color:var(--gr);text-align:right}
+.li{font-size:12px;color:var(--mut);padding:3px 8px}
+.tot{text-align:right;font:700 15px var(--f);margin:10px 0;color:var(--cy)}
+.wr{padding:11px 2px;border-bottom:1px solid var(--line)}.wr b{font:700 18px var(--f);color:var(--gr);margin-right:8px}.wr small{color:var(--mut)}
+.chips button.on{background:var(--cy);color:#021018}
+.bar{display:grid;grid-template-columns:70px 1fr 64px;gap:8px;align-items:center;font-size:12px;margin:5px 0}.bar i{height:12px;background:#1a2244;position:relative}.bar i:after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--w);background:linear-gradient(90deg,var(--cy),var(--pk))}.bar em{font-style:normal;text-align:right;color:var(--mut)}
+.sec{font:700 13px var(--f);color:var(--cy);margin:16px 0 4px}
+.kp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.kp div{background:#101733;padding:10px;font-size:12px;color:var(--mut)}.kp b{display:block;font:700 20px var(--f);color:var(--tx)}
+.chips button:disabled{opacity:.3;border-color:var(--line);color:var(--mut)}
+.pr{font:700 18px var(--f);color:var(--gr);margin-top:10px;min-height:24px}
+.ex{display:flex;gap:6px;margin-top:8px}.ex button{flex:1;padding:7px 2px;background:transparent;border:1px solid var(--cy);color:var(--cy);font:600 12px var(--k)}
+.ext-o{margin:10px 0;padding:10px;background:#101733}.ext-o small{display:block;color:var(--mut);margin-top:4px}.ext-o .btn{width:100%;margin-top:8px}.btn:disabled{opacity:.4}
+.it{padding:8px 4px;border-bottom:1px solid var(--line)}.it .l1{font-size:13px}.it .l1 span{color:var(--mut);margin-left:6px;font-size:12px}.it .l2{font-size:12px;color:var(--mut);margin-top:2px}.it .l2 b{color:var(--gr)}.it i{font-style:normal;color:var(--am);margin-left:6px;font-size:11px}.it i.ok{color:var(--gr)}
+.dh{display:flex;justify-content:space-between;gap:8px;background:#141a36;padding:7px 8px;margin-top:10px;font-size:12px;color:var(--cy);font-weight:600}
+.wd summary{grid-template-columns:1fr 1.5fr .8fr}.wd summary span{font-size:12px;color:var(--mut)}.wd summary b:first-child{text-align:left;color:var(--tx)}
 </style>
 </head>
 <body>
@@ -82,7 +99,7 @@ input[type=time]{font:700 20px var(--f);color-scheme:dark}
   <div class="date"><button id="pv">‹</button><span id="dl"></span><button id="nx">›</button></div>
   <div class="tl" id="g"></div>
   <div class="lg"><span><i style="background:#0a0e1d;border:1px solid var(--line)"></i>ว่าง</span><span><i style="background:var(--pk)"></i>จองแล้ว</span><span><i style="background:var(--cy)"></i>เวลาตอนนี้</span></div>
-  <div class="sub" id="net" style="margin-bottom:6px"></div><div class="sub" id="hint"></div><div style="margin-top:14px"><button class="btn g" id="sw" style="flex:none;padding:8px 14px;font-size:13px;clip-path:none">สลับผู้ใช้</button></div>
+  <div class="sub" id="net" style="margin-bottom:6px"></div><div class="sub" id="hint"></div><div id="comwrap" style="margin-top:10px;display:none"><button class="btn" id="cm" style="flex:none;padding:10px 18px;font-size:14px">💰 คอมมิชชั่น</button></div><div style="margin-top:14px"><button class="btn g" id="sw" style="flex:none;padding:8px 14px;font-size:13px;clip-path:none">สลับผู้ใช้</button></div>
 </div>
 <div id="gate"><div class="gb"><h1>BN<em>RS</em></h1><div class="sub">BN Racing Station</div><p style="margin:14px 0 4px">คุณคือใคร?</p><button class="btn" id="bc">ลูกค้า</button><button class="btn g" id="bs">พนักงาน</button><div id="pw" style="display:none;flex-direction:column;gap:10px"><input id="pc" type="password" placeholder="รหัสพนักงาน"><div id="pe"></div><button class="btn" id="po">เข้าสู่ระบบ</button></div></div></div>
 <div id="ov"><div class="sh" id="sh"></div></div>
@@ -90,10 +107,10 @@ input[type=time]{font:700 20px var(--f);color-scheme:dark}
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
 var FB={apiKey:"AIzaSyCYUtQqsSeRKpclLmtjYzwIbdn65H5bqSw",authDomain:"peak-7b183.firebaseapp.com",projectId:"peak-7b183",appId:"1:763901338697:web:d7ed18342323d6e5208b98"};
-var START=780,END=1440,PX=1.3,D=new Date(),day=ymd(D),B=[],ADMIN=false;
+var START=780,END=1440,PX=1.3,D=new Date(),day=ymd(D),B=[],ADMIN=false,P={W:[],A:[]},BOSS=false,COMON=false,CV={t:0,r:"u",s:7},RATE=10,MAXE=1800,HOLD=false,BOSSPW="Boss8888";
 firebase.initializeApp(FB);var fs=firebase.firestore();try{fs.settings({experimentalAutoDetectLongPolling:true})}catch(e){}var ref=fs.doc("bnrs/state"),net=document.getElementById("net");
-ref.onSnapshot(function(x){try{B=x.exists?JSON.parse(x.data().b):[]}catch(e){B=[]}B.forEach(nz);net.textContent="🟢 ออนไลน์ · อัปเดตล่าสุด "+new Date().toTimeString().slice(0,8);grid();cards()},function(e){net.textContent="🔴 เชื่อมต่อไม่ได้: "+(e.code||e.message)});
-function save(){ref.set({b:JSON.stringify(B)}).catch(function(e){alert("บันทึกไม่สำเร็จ: "+(e.code||e.message))})}
+ref.onSnapshot(function(x){try{B=x.exists?JSON.parse(x.data().b):[]}catch(e){B=[]}B.forEach(nz);try{P=x.exists&&x.data().w?JSON.parse(x.data().w):{W:[],A:[]}}catch(e){P={W:[],A:[]}}P.W=P.W||[];P.A=P.A||[];net.textContent="🟢 ออนไลน์ · อัปเดตล่าสุด "+new Date().toTimeString().slice(0,8);grid();cards();if(COMON)com()},function(e){net.textContent="🔴 เชื่อมต่อไม่ได้: "+(e.code||e.message)});
+function save(){ref.set({b:JSON.stringify(B),w:JSON.stringify(P)},{merge:true}).catch(function(e){alert("บันทึกไม่สำเร็จ: "+(e.code||e.message))})}
 function nz(b){if(b.st==null){b.st=START+b.s*30;b.en=b.st+b.n*30}return b}
 function ymd(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
 function hm(m){m=m%1440;return String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0")}
@@ -101,22 +118,22 @@ function pt(v){if(!v)return null;var a=v.split(":");return +a[0]*60+ +a[1]}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function pad(n){return String(n).padStart(2,"0")}
 function nowSec(){var x=new Date();return x.getHours()*3600+x.getMinutes()*60+x.getSeconds()}
-function clash(m,d,s,e,id){return B.find(function(b){return b.d===d&&b.m===m&&b.id!==id&&b.st<e&&b.en>s})}
+function clash(m,d,s,e,id){return B.find(function(b){return b.d===d&&b.m===m&&[].concat(id).indexOf(b.id)<0&&b.st<e&&b.en>s})}
 function cards(){
-  var t=nowSec(),td=ymd(new Date()),h="";
+  var t=nowSec(),td=ymd(new Date()),yd=ago(1),h="";
   for(var m=0;m<4;m++){
-    var cur=B.find(function(b){return b.d===td&&b.m===m&&t>=b.st*60&&t<b.en*60});
+    var cur=B.find(function(b){return b.m===m&&b.d===yd&&b.en>END&&t+86400>=b.st*60&&t+86400<b.en*60})||B.find(function(b){return b.d===td&&b.m===m&&t>=b.st*60&&t<b.en*60});
     if(cur){
-      var left=cur.en*60-t,tot=(cur.en-cur.st)*60,
+      var tt=cur.d===td?t:t+86400,left=cur.en*60-tt,tot=(cur.en-cur.st)*60,
       s=pad(Math.floor(left/3600))+":"+pad(Math.floor(left%3600/60))+":"+pad(left%60),
       cl=left<=120?" crit":left<=600?" warn":"";
-      h+='<div class="m play'+cl+'" data-id="'+cur.id+'"><div class="hd"><span>เครื่อง '+(m+1)+'</span><span class="st">กำลังเล่น</span></div><div class="nm">'+esc(cur.name)+'</div><div class="tm">'+s+'</div><div class="end">หมดเวลา <b>'+hm(cur.en)+'</b> น.</div><div class="gauge"><i style="width:'+(left/tot*100)+'%"></i></div><div class="rg"><span>เริ่ม '+hm(cur.st)+'</span><span>เหลือ '+Math.ceil(left/60)+' นาที</span></div>'+(ADMIN&&cur.owe>0?'<div class="owe">ค้างชำระ ฿'+cur.owe+'</div>':'')+(ADMIN&&cur.note?'<div class="nt">📝 '+esc(cur.note)+'</div>':'')+'</div>';
+      h+='<div class="m play'+cl+'" data-id="'+cur.id+'"><div class="hd"><span>เครื่อง '+(m+1)+'</span><span class="st">กำลังเล่น</span></div><div class="nm">'+esc(cur.name)+'</div><div class="tm">'+s+'</div><div class="end">หมดเวลา <b>'+hm(cur.en)+'</b> น.</div><div class="gauge"><i style="width:'+(left/tot*100)+'%"></i></div><div class="rg"><span>เริ่ม '+hm(cur.st)+'</span><span>เหลือ '+Math.ceil(left/60)+' นาที</span></div>'+(ADMIN?'<div class="ex"><button data-x="30" data-id="'+cur.id+'">+30 นาที</button><button data-x="60" data-id="'+cur.id+'">+1 ชม.</button></div>':'')+(ADMIN&&cur.owe>0?'<div class="owe">ค้าง'+(grp(cur).length>1?'ทั้งโต๊ะ':'ชำระ')+' ฿'+cur.owe+'</div>':'')+(ADMIN&&cur.note?'<div class="nt">📝 '+esc(cur.note)+'</div>':'')+'</div>';
     }else{
       var nx=null;B.forEach(function(b){if(b.d===td&&b.m===m&&b.st*60>t&&(!nx||b.st<nx.st))nx=b});
       h+='<div class="m free"><div class="hd"><span>เครื่อง '+(m+1)+'</span><span class="st">ว่าง</span></div><div class="nm">พร้อมให้เล่น</div><div class="tm">'+(nx?'ว่างถึง '+hm(nx.st):'ว่างทั้งคืน')+'</div><div class="gauge"><i style="width:0"></i></div><div class="rg"><span>'+(nx?'คิวถัดไป '+esc(nx.name):'ยังไม่มีคิว')+'</span></div></div>';
     }
   }
-  document.getElementById("cards").innerHTML=h;
+  if(!HOLD)document.getElementById("cards").innerHTML=h;
   document.getElementById("clk").textContent=new Date().toTimeString().slice(0,8);
 }
 function grid(){
@@ -129,45 +146,83 @@ function grid(){
     h+='<div class="col'+(ADMIN?" adm":"")+'" data-m="'+m+'" style="height:'+H+'px;background-image:linear-gradient(var(--line) 1px,transparent 1px);background-size:100% '+(60*PX)+'px">';
     if(today&&nm>START)h+='<div class="pst" style="height:'+(Math.min(nm,END)-START)*PX+'px"></div>';
     B.forEach(function(b){if(b.d!==day||b.m!==m)return;
-      h+='<div class="blk" data-id="'+b.id+'" style="top:'+(b.st-START)*PX+'px;height:'+(b.en-b.st)*PX+'px"><b>'+esc(b.name)+(ADMIN&&b.owe>0?" ฿":"")+'</b><small>'+hm(b.st)+'–'+hm(b.en)+'</small></div>'});
+      h+='<div class="blk'+(b.en>END?" ot":"")+'" data-id="'+b.id+'" style="top:'+(b.st-START)*PX+'px;height:'+(Math.min(b.en,END)-b.st)*PX+'px"><b>'+esc(b.name)+(ADMIN&&b.owe>0?" ฿":"")+(ADMIN&&b.ph>0?" ✓":"")+'</b><small>'+hm(b.st)+'–'+hm(b.en)+(b.en>END?" 🌙เกินเที่ยงคืน":"")+'</small></div>'});
     if(today&&nm>=START&&nm<END&&m===3)h+='<div class="nl" style="top:'+(nm-START)*PX+'px"></div>';
     h+='</div>';
   }
   document.getElementById("g").innerHTML=h;
   document.getElementById("dl").textContent=new Date(day+"T00:00:00").toLocaleDateString("th-TH",{weekday:"short",day:"numeric",month:"short",year:"numeric"})+(today?" · วันนี้":"");
 }
-function close(){document.getElementById("ov").classList.remove("on")}
+function close(){COMON=false;document.getElementById("ov").classList.remove("on")}
 function open(h){document.getElementById("sh").innerHTML=h;document.getElementById("ov").classList.add("on")}
+function grp(b){return b.g?B.filter(function(x){return x.g===b.g&&x.d===b.d}):[b]}
 function form(b,m,st){
-  var ed=!!b,en=ed?b.en:Math.min(st+60,END);if(ed)st=b.st;
-  open('<h3>'+(ed?"แก้ไขการจอง":"จองเครื่อง")+' '+(m+1)+'</h3><div class="sub">'+esc(document.getElementById("dl").textContent)+'</div>'+
-  '<label>ชื่อลูกค้า</label><input id="nm" maxlength="24" placeholder="พิมพ์ชื่อ" value="'+(ed?esc(b.name):"")+'">'+
-  '<div class="two"><div><label>เวลาเริ่ม</label><input id="ts" type="time" value="'+hm(st)+'"></div><div><label>เวลาจบ (หมดเวลา)</label><input id="te" type="time" value="'+hm(en)+'"></div></div>'+
-  '<div class="chips"><button class="n" data-now="1">เริ่มตอนนี้</button><button data-d="30">+30 นาที</button><button data-d="60">+1 ชม.</button><button data-d="120">+2 ชม.</button><button data-d="180">+3 ชม.</button></div><div id="er"></div>'+
-  '<label>ค้างชำระ (บาท)</label><input id="ow" type="number" inputmode="numeric" min="0" placeholder="0" value="'+(ed&&b.owe?b.owe:"")+'">'+
-  '<label>โน้ต</label><textarea id="nt" rows="2" maxlength="120" placeholder="รายละเอียดเพิ่มเติม">'+(ed?esc(b.note||""):"")+'</textarea>'+
-  '<div class="r">'+(ed?'<button class="btn d" id="dl2">ลบ</button>':'<button class="btn g" id="cx">ยกเลิก</button>')+'<button class="btn" id="ok">'+(ed?"บันทึก":"ยืนยันจอง")+'</button></div>'+(ed?'<div class="r"><button class="btn g" id="cx">ปิด</button></div>':""));
+  var ed=!!b,gs=ed?grp(b):[],G=gs.length>1,all=true,sel=[m],en=ed?b.en:Math.min(st+60,MAXE),P0=0;
+  if(ed)st=b.st;
   var $=function(i){return document.getElementById(i)};
+  open('<h3>'+(ed?"แก้ไขการจอง":"จองเครื่อง")+'</h3><div class="sub">'+esc($("dl").textContent)+'</div>'+
+  '<label>ชื่อลูกค้า</label><input id="nm" maxlength="24" placeholder="พิมพ์ชื่อ" value="'+(ed?esc(b.name):"")+'">'+
+  (!ed?'<label>เลือกเครื่อง (ติ๊กได้หลายเครื่อง)</label><div class="chips" id="ms">'+[0,1,2,3].map(function(i){return'<button data-mc="'+i+'" class="'+(i===m?"on":"")+'">เครื่อง '+(i+1)+'</button>'}).join("")+'</div>':G?'<label>เครื่อง</label><div class="chips"><button id="ga" class="on"></button></div>':'<div class="sub" style="margin-top:8px">เครื่อง '+(b.m+1)+'</div>')+
+  '<div class="two"><div><label>เวลาเริ่ม</label><input id="ts" type="time" value="'+hm(st)+'"></div><div><label>เวลาจบ (หมดเวลา)</label><input id="te" type="time" value="'+hm(en)+'"></div></div>'+
+  '<div class="chips" id="dc"><button class="n" data-now="1">เริ่มตอนนี้</button><button data-d="30">+30 นาที</button><button data-d="60">+1 ชม.</button><button data-d="120">+2 ชม.</button><button data-d="180">+3 ชม.</button></div>'+
+  '<div class="pr" id="pr"></div><div class="sub">เลยเที่ยงคืนได้ (ถึง 06:00 น.) เช่น เริ่ม 23:30 จบ 00:30 ระบบจะติดป้าย 🌙 เกินเที่ยงคืน และนับยอดเป็นของวันที่เริ่ม</div><div id="er"></div>'+
+  (ed&&b.ph>0?'<div class="sub" style="color:var(--am)">✓ คิวนี้เบิกคอมมิชชั่นแล้ว ถ้าแก้ไขหรือลบ ระบบจะคำนวณส่วนต่างเป็นยอดปรับในการเบิกครั้งถัดไป</div>':"")+
+  '<label>ค้างชำระ (โน้ตเตือน ไม่นำไปคิดเงิน)</label><input id="ow" type="number" inputmode="numeric" min="0" placeholder="0" value="'+(ed&&b.owe?b.owe:"")+'"><div class="chips"><button id="o50">ค้าง 50% ของราคา</button>'+(ed&&b.owe>0?'<button class="n" id="opd">ชำระครบแล้ว</button>':'')+'</div>'+
+  '<label>โน้ต</label><textarea id="nt" rows="2" maxlength="120" placeholder="รายละเอียดเพิ่มเติม">'+(ed?esc(b.note||""):"")+'</textarea>'+(G?'<label>ลบคิว (เลือกเครื่องที่ต้องการลบ)</label><div class="chips" id="dm">'+gs.slice().sort(function(x,y){return x.m-y.m}).map(function(z){return'<button data-di="'+z.id+'">เครื่อง '+(z.m+1)+' · '+hm(z.st)+'–'+hm(z.en)+'</button>'}).join("")+'<button data-all="1" class="n">เลือกทั้งโต๊ะ</button></div>':'')+
+  '<div class="r">'+(ed?'<button class="btn d" id="dl2">ลบ</button>':'<button class="btn g" id="cx">ยกเลิก</button>')+'<button class="btn" id="ok">'+(ed?"บันทึก":"ยืนยันจอง")+'</button></div>'+(ed?'<div class="r"><button class="btn g" id="cx">ปิด</button></div>':""));
+  function rng(){var s=pt($("ts").value),e=pt($("te").value);if(s==null||e==null)return null;if(e<=s)e+=1440;return[s,e]}
+  function tg(){return G&&all?gs:[b]}
+  function upd(){var r=rng();
+    if(!ed&&r){document.querySelectorAll("#ms button").forEach(function(c){var i=+c.dataset.mc,x=r[0]>=START&&r[0]<END&&r[1]<=MAXE&&clash(i,day,r[0],r[1],null);c.disabled=!!x;c.title=x?x.name:"";if(x){c.classList.remove("on");sel=sel.filter(function(v){return v!==i})}})}
+    var n=ed?tg().length:sel.length;
+    P0=r?fee({st:r[0],en:r[1]})*n:0;
+    $("pr").textContent=r&&n?"ราคา ฿"+P0.toLocaleString()+(n>1?" ("+n+" เครื่อง)":""):""}
   $("cx").onclick=close;
-  document.querySelectorAll(".chips button").forEach(function(c){c.onclick=function(){
+  $("ts").addEventListener("input",upd);$("te").addEventListener("input",upd);
+  document.querySelectorAll("#ms button").forEach(function(c){c.onclick=function(){if(c.disabled)return;var i=+c.dataset.mc,k=sel.indexOf(i);if(k<0){sel.push(i);c.classList.add("on")}else{sel.splice(k,1);c.classList.remove("on")}upd()}});
+  document.querySelectorAll("#dc button").forEach(function(c){c.onclick=function(){
     if(c.dataset.now){var x=new Date();$("ts").value=pad(x.getHours())+":"+pad(x.getMinutes())}
-    else{var s=pt($("ts").value);if(s==null)return;$("te").value=hm(Math.min(s+ +c.dataset.d,END))}}});
-  var dl=$("dl2");
-  if(dl)dl.onclick=function(){
-    if(!dl.dataset.s){dl.dataset.s=1;dl.textContent="แตะอีกครั้งเพื่อลบ";return}
-    B=B.filter(function(z){return z.id!==b.id});save();close();grid();cards()};
+    else{var s=pt($("ts").value);if(s==null)return;$("te").value=hm(Math.min(s+ +c.dataset.d,MAXE))}upd()}});
+  var ga=$("ga"),gl=function(){if(ga){ga.classList.toggle("on",all);ga.textContent=all?"แก้ทั้งโต๊ะ ("+gs.length+" เครื่อง: "+gs.map(function(z){return z.m+1}).sort().join(",")+")":"แก้เฉพาะเครื่อง "+(b.m+1)+" เครื่องเดียว"}};
+  if(ga){gl();ga.onclick=function(){all=!all;gl();upd()}}
+  $("o50").onclick=function(){if(P0)$("ow").value=Math.round(P0/2)};
+  var pd=$("opd");if(pd)pd.onclick=function(){tg().forEach(function(t){t.owe=0});save();close();grid();cards()};
+  var dl=$("dl2"),ds=ed?[b.id]:[];
+  var dlab=function(){if(!dl)return;delete dl.dataset.s;dl.textContent=G?"ลบที่เลือก ("+ds.length+")":"ลบ";dl.disabled=!ds.length;document.querySelectorAll("#dm button[data-di]").forEach(function(c){c.classList.toggle("on",ds.indexOf(+c.dataset.di)>=0)})};
+  if(dl){dlab();
+    document.querySelectorAll("#dm button").forEach(function(c){c.onclick=function(){
+      if(c.dataset.all){ds=ds.length===gs.length?[b.id]:gs.map(function(z){return z.id})}
+      else{var i=+c.dataset.di,k=ds.indexOf(i);if(k<0)ds.push(i);else ds.splice(k,1)}dlab()}});
+    dl.onclick=function(){
+      if(!dl.dataset.s){dl.dataset.s=1;dl.textContent="แตะอีกครั้งเพื่อลบ"+(G?" "+ds.length+" เครื่อง":"");return}
+      var T=gs.filter(function(z){return ds.indexOf(z.id)>=0}),ids=T.map(function(z){return z.id});
+      T.forEach(function(t){if(t.ph>0)P.A.push({id:Date.now()+t.id%1000,d:ymd(new Date()),h:-t.ph,note:"ลบคิว "+t.name+" (เครื่อง "+(t.m+1)+" · "+t.d+" · "+hm(t.st)+"–"+hm(t.en)+")",paid:0})});
+      B=B.filter(function(z){return ids.indexOf(z.id)<0});save();close();grid();cards()}}
   $("ok").onclick=function(){
-    var n=$("nm").value.trim(),s=pt($("ts").value),e=pt($("te").value),er=$("er");
-    if(e===0)e=END;
+    var n=$("nm").value.trim(),er=$("er"),r=rng();
     if(!n){$("nm").style.borderColor="var(--pk)";er.textContent="กรุณาใส่ชื่อลูกค้า";return}
-    if(s==null||e==null){er.textContent="กรุณาระบุเวลาเริ่มและเวลาจบ";return}
-    if(s<START||e>END){er.textContent="ร้านเปิด 13:00 – 00:00 น. เท่านั้น";return}
-    if(e<=s){er.textContent="เวลาจบต้องหลังเวลาเริ่ม";return}
-    var c=clash(m,day,s,e,ed?b.id:null);
-    if(c){er.textContent="ชนกับคิว "+c.name+" ("+hm(c.st)+"–"+hm(c.en)+")";return}
+    if(!ed&&!sel.length){er.textContent="กรุณาเลือกอย่างน้อย 1 เครื่อง";return}
+    if(!r){er.textContent="กรุณาระบุเวลาเริ่มและเวลาจบ";return}
+    var s=r[0],e=r[1];
+    if(s<START||s>=END){er.textContent="เวลาเริ่มต้องอยู่ในช่วง 13:00 – 00:00 น.";return}
+    if(e>MAXE){er.textContent="เวลาจบเลยเที่ยงคืนได้ไม่เกิน 06:00 น.";return}
+    var T=ed?tg():null,ids=ed?T.map(function(z){return z.id}):null,list=ed?T.map(function(z){return z.m}):sel,d=ed?b.d:day;
+    for(var i=0;i<list.length;i++){var c=clash(list[i],d,s,e,ids);if(c){er.textContent="เครื่อง "+(list[i]+1)+" ชนกับคิว "+c.name+" ("+hm(c.st)+"–"+hm(c.en)+")";return}}
     var v={name:n,st:s,en:e,owe:+$("ow").value||0,note:$("nt").value.trim()};
-    if(ed)Object.assign(b,v);else B.push(Object.assign({id:Date.now(),d:day,m:m},v));
+    if(ed)T.forEach(function(t){Object.assign(t,v)});
+    else{var g=sel.length>1?Date.now():null;sel.slice().sort().forEach(function(i,k){B.push(Object.assign({id:Date.now()+k,d:day,m:i},v,g?{g:g}:{}))})}
     save();close();grid();cards()};
+  upd();
+}
+function ext(b,x){
+  var gs=grp(b),O=[[[b],"ต่อเครื่องนี้"]];if(gs.length>1)O.push([gs,"ต่อทั้งโต๊ะ ("+gs.length+" เครื่อง)"]);
+  var h='<h3>ต่อเวลา '+(x===60?"1 ชั่วโมง":"30 นาที")+'</h3><div class="sub">'+esc(b.name)+' · เครื่อง '+(b.m+1)+'</div>';
+  O.forEach(function(o,i){var T=o[0],ids=T.map(function(z){return z.id}),bad=[],add=0;
+    T.forEach(function(t){var ne=t.en+x,c=ne>MAXE?{name:"เกิน 06:00 น.",st:MAXE}:clash(t.m,t.d,t.st,ne,ids);if(c)bad.push("เครื่อง "+(t.m+1)+" ชนคิว "+c.name+" ("+hm(c.st)+")");add+=fee({st:t.st,en:ne})-fee(t)});
+    h+='<div class="ext-o"><b>'+o[1]+'</b><small>หมดเวลาใหม่ '+hm(b.en+x)+' น. · ราคาเพิ่ม ฿'+add.toLocaleString()+'</small>'+(bad.length?'<small style="color:var(--pk)">ต่อไม่ได้: '+esc(bad.join(" · "))+'</small>':'')+'<button class="btn" data-o="'+i+'"'+(bad.length?" disabled":"")+'>ยืนยัน</button></div>'});
+  open(h+'<div class="r"><button class="btn g" id="cx">ยกเลิก</button></div>');
+  document.getElementById("cx").onclick=close;
+  document.querySelectorAll("[data-o]").forEach(function(k){k.onclick=function(){O[+k.dataset.o][0].forEach(function(t){t.en+=x});save();close();grid();cards()}});
 }
 function byId(id){return B.find(function(b){return b.id==id})}
 document.getElementById("g").onclick=function(e){
@@ -178,17 +233,96 @@ document.getElementById("g").onclick=function(e){
   form(null,+c.dataset.m,Math.min(s,END-30));
 };
 document.getElementById("cards").onclick=function(e){
-  var k=e.target.closest(".m.play");if(!k||!ADMIN)return;var b=byId(k.dataset.id);if(b)form(b,b.m);
+  var x=e.target.closest("[data-x]");if(x&&ADMIN){var q=byId(x.dataset.id);if(q)ext(q,+x.dataset.x);return}var k=e.target.closest(".m.play");if(!k||!ADMIN)return;var b=byId(k.dataset.id);if(b)form(b,b.m);
 };
 document.getElementById("ov").onclick=function(e){if(e.target.id==="ov")close()};
 document.getElementById("pv").onclick=function(){var d=new Date(day+"T00:00:00");d.setDate(d.getDate()-1);day=ymd(d);grid()};
 document.getElementById("nx").onclick=function(){var d=new Date(day+"T00:00:00");d.setDate(d.getDate()+1);day=ymd(d);grid()};
-function enter(a){ADMIN=a;document.getElementById("gate").style.display="none";
-document.getElementById("hint").textContent=a?"พนักงาน: แตะช่องว่างในตารางเพื่อจอง (กำหนดเวลาเริ่ม/จบเองได้) · แตะคิวที่จองแล้วหรือการ์ดเครื่องเพื่อแก้ไข/ลบ":"ดูเครื่องว่างได้ที่นี่ · จองกับพนักงานที่ร้าน";grid();cards()}
+function enter(a){ADMIN=a;document.getElementById("comwrap").style.display=a?"block":"none";document.getElementById("gate").style.display="none";
+document.getElementById("hint").textContent=a?"พนักงาน: แตะช่องว่างในตารางเพื่อจอง (ติ๊กเลือกได้หลายเครื่อง กำหนดเวลาเองได้) · แตะคิวที่จองแล้วหรือการ์ดเครื่องเพื่อแก้ไข/ลบ":"ดูเครื่องว่างได้ที่นี่ · จองกับพนักงานที่ร้าน";grid();cards()}
 document.getElementById("bc").onclick=function(){enter(false)};
 document.getElementById("bs").onclick=function(){var p=document.getElementById("pw");p.style.display="flex";document.getElementById("pc").focus()};
 document.getElementById("po").onclick=function(){if(document.getElementById("pc").value==="Bnrs8888")enter(true);else document.getElementById("pe").textContent="รหัสไม่ถูกต้อง"};
-document.getElementById("sw").onclick=function(){ADMIN=false;close();document.getElementById("pc").value="";document.getElementById("pe").textContent="";document.getElementById("pw").style.display="none";document.getElementById("gate").style.display="flex";grid();cards()};
+document.getElementById("sw").onclick=function(){ADMIN=false;BOSS=false;document.getElementById("comwrap").style.display="none";close();document.getElementById("pc").value="";document.getElementById("pe").textContent="";document.getElementById("pw").style.display="none";document.getElementById("gate").style.display="flex";grid();cards()};
+function hrs(b){return(b.en-b.st)/60}
+function fin(b){return Date.now()>=new Date(b.d+"T00:00:00").getTime()+b.en*60000}
+function rd(x){return+x.toFixed(2)}
+function mny(h){return Math.round(h*RATE)}
+function dstr(d){return new Date(d+"T00:00:00").toLocaleDateString("th-TH",{weekday:"short",day:"numeric",month:"short"})}
+function ago(n){var d=new Date();d.setDate(d.getDate()-n);return ymd(d)}
+function inR(d,r){var t=ymd(new Date());return r==="t"?d===t:r==="7"?d>=ago(6):r==="m"?d.slice(0,7)===t.slice(0,7):true}
+function unpaid(){
+  var R=[],h=0,amt=0;
+  B.forEach(function(b){if(!fin(b))return;var d=hrs(b)-(b.ph||0);if(Math.abs(d)<1e-6)return;
+    R.push({d:b.d,m:b.m,name:b.name,st:b.st,en:b.en,h:d,full:hrs(b),prev:b.ph||0,amt:Math.round(d*RATE),ot:b.en>END})});
+  P.A.forEach(function(a){if(!a.paid)R.push({d:a.d||"",adj:1,name:a.note,h:a.h,amt:Math.round(a.h*RATE)})});
+  R.forEach(function(r){h+=r.h;amt+=r.amt});
+  return{h:h,q:R.length,amt:amt,rows:R}}
+function chips(k,cur,arr){return'<div class="chips">'+arr.map(function(c){return'<button data-'+k+'="'+c[0]+'" class="'+(String(cur)===String(c[0])?"on":"")+'">'+c[1]+'</button>'}).join("")+'</div>'}
+function rowH(r,st){
+  if(r.adj)return'<div class="it"><div class="l1"><b>ยอดปรับ</b> · '+esc(r.name)+'</div><div class="l2">'+rd(r.h)+' ชม. × '+RATE+' บาท = <b>฿'+r.amt+'</b></div></div>';
+  var calc=r.prev>0?'เดิมเบิกไป '+rd(r.prev)+' ชม. → ตอนนี้ '+rd(r.full)+' ชม. ส่วนต่าง '+rd(r.h)+' ชม. × '+RATE+' บาท':rd(r.h)+' ชม. × 1 คน × '+RATE+' บาท';
+  return'<div class="it"><div class="l1"><b>เครื่อง '+(r.m+1)+'</b> · '+esc(r.name)+' <span>'+hm(r.st)+'–'+hm(r.en)+(r.ot?' 🌙':'')+'</span></div><div class="l2">'+calc+' = <b>฿'+r.amt+'</b>'+(st||'')+'</div></div>'}
+function listH(R,sf){var o="",M={},ks=[];
+  R.forEach(function(r){var k=r.d||"";if(!M[k]){M[k]=[];ks.push(k)}M[k].push(r)});
+  ks.sort().reverse().forEach(function(k){var a=M[k].sort(function(x,y){return(x.st||0)-(y.st||0)}),h=0,m=0;a.forEach(function(r){h+=r.h;m+=r.amt});
+    o+='<div class="dh"><span>'+(k?dstr(k):"ยอดปรับ")+'</span><span>'+a.length+' รายการ · '+rd(h)+' ชม. · ฿'+m.toLocaleString()+'</span></div>'+a.map(function(r){return rowH(r,sf?sf(r):"")}).join("")});
+  return o}
+function tab0(U){
+  var h='<div class="big'+(U.amt<0?" neg":"")+'"><small>ยังไม่ได้เบิก</small><b>฿'+U.amt.toLocaleString()+'</b><span>'+rd(U.h)+' คน-ชั่วโมง × '+RATE+' บาท · '+U.q+' รายการ</span></div><div class="sub">นับเฉพาะคิวที่เล่นจบแล้ว</div>';
+  if(U.amt<0)h+='<div class="sub" style="color:var(--pk)">ยอดติดลบจากการแก้ไข/ลบคิวที่เบิกไปแล้ว จะถูกหักในการเบิกครั้งหน้า</div>';
+  h+=chips("r",CV.r,[["u","ยังไม่เบิก"],["t","วันนี้"],["7","7 วัน"],["m","เดือนนี้"]]);
+  if(CV.r==="u"){
+    h+=U.rows.length?'<div class="sec">รายการที่ยังไม่เบิก · รวมกันได้เท่ายอดด้านบน</div>'+listH(U.rows)+'<div class="tot">รวม '+U.q+' รายการ = '+rd(U.h)+' ชม. = ฿'+U.amt.toLocaleString()+'</div>':'<div class="sub" style="margin:12px 0">ไม่มียอดค้างเบิก</div>';
+  }else{
+    var h2=0,m2=0,R=B.filter(function(b){return fin(b)&&inR(b.d,CV.r)}).map(function(b){var x=hrs(b);return{d:b.d,m:b.m,name:b.name,st:b.st,en:b.en,h:x,full:x,prev:0,amt:Math.round(x*RATE),ot:b.en>END,ph:b.ph||0}});
+    R.forEach(function(r){h2+=r.h;m2+=r.amt});
+    h+=R.length?'<div class="sec">ทุกรายการในช่วงนี้ พร้อมสถานะการเบิก</div>'+listH(R,function(r){return r.ph>=r.h-1e-6?'<i class="ok">✓ เบิกแล้ว</i>':r.ph>0?'<i>เบิกบางส่วน</i>':'<i>ค้างเบิก</i>'})+'<div class="tot">รวมช่วงนี้ '+R.length+' รายการ = '+rd(h2)+' ชม. = ฿'+m2.toLocaleString()+'</div>':'<div class="sub" style="margin:12px 0">ไม่มีรายการในช่วงนี้</div>';
+  }
+  return h+(U.amt>0?'<div class="r"><button class="btn" id="wd">เบิกเงิน ฿'+U.amt.toLocaleString()+'</button></div>':'')}
+function tab1(){var s=0,n=P.W.length,h='';
+  P.W.forEach(function(w,i){s+=w.amt;
+    h+='<details class="wd"><summary><b>ใบเบิก #'+(n-i)+'</b><span>'+new Date(w.t).toLocaleString("th-TH",{day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"})+'</span><b>฿'+w.amt.toLocaleString()+'</b></summary>'+
+    (w.it&&w.it.length?listH(w.it)+'<div class="tot">รวม '+w.q+' รายการ = '+rd(w.h)+' ชม. = ฿'+w.amt.toLocaleString()+'</div>':'<div class="sub" style="padding:8px">'+rd(w.h)+' คน-ชม. · '+w.q+' รายการ (ใบเบิกเก่า ไม่มีรายการแนบ)</div>')+'</details>'});
+  return(n?'<div class="tot">เบิกไปแล้วรวม ฿'+s.toLocaleString()+' · '+n+' ใบ (แตะใบเบิกเพื่อดูรายการ)</div>':'<div class="sub" style="margin:14px 0">ยังไม่เคยเบิก</div>')+h}
+function bars(r){var m=Math.max.apply(null,r.map(function(x){return x[1]}).concat(1e-6));return r.map(function(x){return'<div class="bar"><span>'+x[0]+'</span><i style="--w:'+(x[1]/m*100)+'%"></i><em>'+x[2]+'</em></div>'}).join("")}
+function tab2(){
+  var f=B.filter(function(b){return fin(b)&&(!CV.s||b.d>=ago(CV.s-1))}),ph=0,rv=0,dr={},dm={},mm=[0,0,0,0],hh={},cu={},ow=0,oq=0;
+  f.forEach(function(b){var x=hrs(b),y=fee(b);ph+=x;rv+=y;dr[b.d]=(dr[b.d]||0)+y;dm[b.d]=(dm[b.d]||0)+x;mm[b.m]+=x;
+    for(var t=Math.floor(b.st/60);t<Math.ceil(b.en/60);t++){var o=Math.min(b.en,t*60+60)-Math.max(b.st,t*60);if(o>0)hh[t]=(hh[t]||0)+o/60}
+    var k=b.name.trim().toLowerCase();cu[k]=cu[k]||{n:b.name,h:0,q:0};cu[k].h+=x;cu[k].q++});
+  
+  var h=chips("s",CV.s,[[7,"7 วัน"],[30,"30 วัน"],[0,"ทั้งหมด"]])+'<div class="kp"><div>คิวทั้งหมด<b>'+f.length+'</b></div><div>คน-ชั่วโมง<b>'+rd(ph)+'</b></div><div>รายได้ค่าเล่น<b>฿'+rv.toLocaleString()+'</b></div><div>คอมมิชชั่น<b>฿'+mny(ph).toLocaleString()+'</b></div></div>';
+  var n=CV.s===7?7:14,r=[];for(var i=n-1;i>=0;i--){var d=ago(i);r.push([d.slice(8)+"/"+d.slice(5,7),dm[d]||0,rd(dm[d]||0)])}
+  h+='<div class="sec">สรุปรายวัน</div>'+(Object.keys(dm).sort().reverse().slice(0,31).map(function(d){return'<div class="bar" style="grid-template-columns:1.2fr 1fr 1fr 1.2fr"><span>'+dstr(d)+'</span><em style="text-align:left">'+rd(dm[d])+' ชม.</em><em>฿'+dr[d].toLocaleString()+'</em><em style="color:var(--gr)">คอม ฿'+mny(dm[d])+'</em></div>'}).join("")||'<div class="li">ยังไม่มีข้อมูล</div>');
+  h+='<div class="sec">กราฟรายวัน (คน-ชั่วโมง)</div>'+bars(r);
+  h+='<div class="sec">แต่ละเครื่อง</div>'+bars(mm.map(function(v,i){return["เครื่อง "+(i+1),v,rd(v)+" ชม."]}));
+  r=[];for(var t=13;t<24;t++)r.push([hm(t*60),hh[t]||0,rd(hh[t]||0)]);
+  h+='<div class="sec">ช่วงเวลาที่คนเยอะ</div>'+bars(r);
+  var top=Object.keys(cu).map(function(k){return cu[k]}).sort(function(a,b){return b.h-a.h}).slice(0,5);
+  h+='<div class="sec">ลูกค้าประจำ</div>'+(top.length?top.map(function(c,i){return'<div class="li">'+(i+1)+'. '+esc(c.n)+' · '+rd(c.h)+' ชม. · '+c.q+' คิว</div>'}).join(""):'<div class="li">ยังไม่มีข้อมูล</div>');
+  return h}
+function com(){COMON=true;var U=unpaid(),h='<h3>💰 คอมมิชชั่น</h3><div class="tabs">'+["คอมมิชชั่น","ประวัติเบิก","สถิติ"].map(function(x,i){return'<button data-t="'+i+'" class="'+(CV.t===i?"on":"")+'">'+x+'</button>'}).join("")+'</div>'+(CV.t===0?tab0(U):CV.t===1?tab1():tab2())+'<div class="r"><button class="btn g" id="cx">ปิด</button></div>';
+  open(h);var q=function(s){return document.querySelectorAll(s)};
+  document.getElementById("cx").onclick=close;
+  q(".tabs button").forEach(function(b){b.onclick=function(){CV.t=+b.dataset.t;com()}});
+  q("[data-r]").forEach(function(b){b.onclick=function(){CV.r=b.dataset.r;com()}});
+  q("[data-s]").forEach(function(b){b.onclick=function(){CV.s=+b.dataset.s;com()}});
+  var w=document.getElementById("wd");if(w)w.onclick=function(){conf(unpaid())}}
+function conf(U){COMON=false;open('<h3>ยืนยันการเบิก</h3><div class="big"><small>เบิกคอมมิชชั่น</small><b>฿'+U.amt.toLocaleString()+'</b><span>'+rd(U.h)+' คน-ชั่วโมง · '+U.q+' รายการ</span></div><div class="sub" style="margin:8px 0">ตรวจรายการที่จะเบิกก่อนกดยืนยัน</div>'+listH(U.rows)+'<div class="tot">รวม '+U.q+' รายการ = '+rd(U.h)+' ชม. = ฿'+U.amt.toLocaleString()+'</div><div class="sub">หลังกดยืนยัน คิวเหล่านี้จะถูกติดป้าย "เบิกแล้ว" และรายการทั้งหมดถูกบันทึกไว้ในประวัติเบิก</div><div class="r"><button class="btn g" id="bk">ย้อนกลับ</button><button class="btn" id="yes">ยืนยันเบิก</button></div>');
+  document.getElementById("bk").onclick=function(){com()};
+  document.getElementById("yes").onclick=function(){var V=unpaid(),ds=[];if(V.amt<=0){com();return}
+    V.rows.forEach(function(r){if(r.d)ds.push(r.d)});
+    B.forEach(function(b){if(fin(b)&&Math.abs(hrs(b)-(b.ph||0))>1e-6)b.ph=hrs(b)});
+    P.A.forEach(function(a){a.paid=1});ds.sort();
+    P.W.unshift({id:Date.now(),t:Date.now(),h:rd(V.h),amt:V.amt,q:V.q,f:ds[0]||"",e:ds[ds.length-1]||"",it:V.rows});
+    save();grid();com()}}
+document.getElementById("cm").onclick=function(){if(BOSS){com();return}
+  open('<h3>รหัสเจ้านาย</h3><div class="sub">ดูคอมมิชชั่นและสถิติของร้าน</div><input id="bp" type="password" placeholder="รหัสเจ้านาย" style="margin-top:12px"><div id="er"></div><div class="r"><button class="btn g" id="cx">ยกเลิก</button><button class="btn" id="bo">เข้าดู</button></div>');
+  document.getElementById("cx").onclick=close;document.getElementById("bp").focus();
+  document.getElementById("bo").onclick=function(){if(document.getElementById("bp").value===BOSSPW){BOSS=true;com()}else document.getElementById("er").textContent="รหัสไม่ถูกต้อง"}};
+document.getElementById("cards").addEventListener("pointerdown",function(){HOLD=true});
+["pointerup","pointercancel"].forEach(function(t){document.addEventListener(t,function(){setTimeout(function(){HOLD=false},400)})});
 var lastMin=-1;
 setInterval(function(){cards();var m=new Date().getMinutes();if(m!==lastMin){lastMin=m;grid()}},1000);
 cards();grid();
